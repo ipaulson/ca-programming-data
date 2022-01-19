@@ -427,8 +427,8 @@ count(data)</code></pre>
   )) %&gt;% 
   group_by(Student_Grade) %&gt;%
   summarise(Count = n(), 
-            State_Test_Percent_Proficient = (sum(st_prof) / n() * 100),
-            iReady_Percent_Proficient = (sum(ir_prof) /n() * 100))</code></pre>
+            State_Test_Percent_Proficient = signif((sum(st_prof) / n() * 100),4),
+            iReady_Percent_Proficient = signif((sum(ir_prof) /n() * 100),4))</code></pre>
 <p>Display percentages of proficient students for the state test.</p>
 <pre class="r"><code>st_percents &lt;- percents%&gt;% 
   group_by(&quot;Grade&quot; = Student_Grade) %&gt;%
@@ -445,35 +445,35 @@ kable(st_percents, align = &quot;c&quot;, caption=&quot;Percent Proficent, State
 <tbody>
 <tr class="odd">
 <td align="center">2</td>
-<td align="center">50.00000</td>
+<td align="center">50.00</td>
 </tr>
 <tr class="even">
 <td align="center">3</td>
-<td align="center">52.94118</td>
+<td align="center">52.94</td>
 </tr>
 <tr class="odd">
 <td align="center">4</td>
-<td align="center">42.88939</td>
+<td align="center">42.89</td>
 </tr>
 <tr class="even">
 <td align="center">5</td>
-<td align="center">41.35021</td>
+<td align="center">41.35</td>
 </tr>
 <tr class="odd">
 <td align="center">6</td>
-<td align="center">41.05058</td>
+<td align="center">41.05</td>
 </tr>
 <tr class="even">
 <td align="center">7</td>
-<td align="center">23.23760</td>
+<td align="center">23.24</td>
 </tr>
 <tr class="odd">
 <td align="center">8</td>
-<td align="center">20.24048</td>
+<td align="center">20.24</td>
 </tr>
 <tr class="even">
 <td align="center">9</td>
-<td align="center">100.00000</td>
+<td align="center">100.00</td>
 </tr>
 </tbody>
 </table>
@@ -495,35 +495,35 @@ kable(ir_percents, align=&quot;c&quot;, caption=&quot;Percent Proficent, i-Ready
 <tbody>
 <tr class="odd">
 <td align="center">2</td>
-<td align="center">50.00000</td>
+<td align="center">50.00</td>
 </tr>
 <tr class="even">
 <td align="center">3</td>
-<td align="center">49.89107</td>
+<td align="center">49.89</td>
 </tr>
 <tr class="odd">
 <td align="center">4</td>
-<td align="center">38.60045</td>
+<td align="center">38.60</td>
 </tr>
 <tr class="even">
 <td align="center">5</td>
-<td align="center">35.86498</td>
+<td align="center">35.86</td>
 </tr>
 <tr class="odd">
 <td align="center">6</td>
-<td align="center">38.71595</td>
+<td align="center">38.72</td>
 </tr>
 <tr class="even">
 <td align="center">7</td>
-<td align="center">20.88773</td>
+<td align="center">20.89</td>
 </tr>
 <tr class="odd">
 <td align="center">8</td>
-<td align="center">24.24850</td>
+<td align="center">24.25</td>
 </tr>
 <tr class="even">
 <td align="center">9</td>
-<td align="center">0.00000</td>
+<td align="center">0.00</td>
 </tr>
 </tbody>
 </table>

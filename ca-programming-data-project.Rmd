@@ -116,8 +116,8 @@ percents <- data %>%
   )) %>% 
   group_by(Student_Grade) %>%
   summarise(Count = n(), 
-            State_Test_Percent_Proficient = (sum(st_prof) / n() * 100),
-            iReady_Percent_Proficient = (sum(ir_prof) /n() * 100))
+            State_Test_Percent_Proficient = signif((sum(st_prof) / n() * 100),4),
+            iReady_Percent_Proficient = signif((sum(ir_prof) /n() * 100),4))
 ```
 
 Display percentages of proficient students for the state test.
